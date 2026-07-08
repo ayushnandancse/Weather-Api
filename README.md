@@ -6,7 +6,7 @@ A beautiful, premium single-page weather web application inspired by the macOS a
 - **Minimalist Search**: A central Spotlight-style search bar for clean, distraction-free input.
 - **Dynamic Autocomplete**: Real-time city suggestions as you type.
 - **Glassmorphism UI**: Beautiful translucent dashboard panels with a vibrant animated background.
-- **Detailed Weather Data**: Displays current temperature, weather conditions, humidity, wind speed, UV index, and a 3-day forecast.
+- **Detailed Weather Data**: Displays current temperature, weather conditions, humidity, wind speed, UV index, and a 7-day forecast.
 
 ## Technologies Used
 - HTML5

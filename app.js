@@ -129,7 +129,7 @@ async function selectCity(city) {
 
 // Fetch weather from Open-Meteo API
 async function fetchWeather(lat, lon) {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,uv_index_max&timezone=auto`;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,uv_index_max&timezone=auto&forecast_days=8`;
     
     const res = await fetch(url);
     if (!res.ok) throw new Error('Network response was not ok');
@@ -156,10 +156,10 @@ function updateDashboard(data) {
     const todayUV = daily.uv_index_max && daily.uv_index_max[0] ? daily.uv_index_max[0] : '--';
     elements.uv.textContent = todayUV;
     
-    // Update Forecast (Next 3 days, skipping today which is index 0)
+    // Update Forecast (Next 7 days, skipping today which is index 0)
     elements.forecastList.innerHTML = '';
     let forecastCount = 0;
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 7; i++) {
         if (!daily.time[i]) break;
         
         const date = new Date(daily.time[i]);

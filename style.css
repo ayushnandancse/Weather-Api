@@ -321,12 +321,26 @@ body {
 
 .forecast-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.forecast-list::-webkit-scrollbar {
+    height: 8px;
+}
+.forecast-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+.forecast-list::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 4px;
 }
 
 .forecast-item {
-    flex: 1;
+    min-width: 100px;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
